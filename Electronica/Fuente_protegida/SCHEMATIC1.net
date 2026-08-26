@@ -1,0 +1,51 @@
+* source LIMITADOR_CORRIENTE
+R_R6         N008771 N01358  1k  
+R_R7         N01358 0  {PARAM}  
+V_V4         N008771 0 10
+V_V5         N01322 0 30
+V_V6         0 N01328 10
+X_Q3         VFIJA N037301 N04269 awb2n2222 PARAMS:                            
++                 
+R_R16         N04269 VCORR  1k  
+X_U3         N04203 N04269 N04257 N04263 N037301 uA741
+V_V9         N04185 0 10
+V_V11         0 N04263 10
+X_R20         0 0 N04203 POT PARAMS: SET=1 VALUE=1K
+R_R17         N04185 N04203  1k  
+V_V10         N04257 0 10
+R_rshunt         VCORR 0  10  
+X_U4         VCORR N01358 N01322 N01328 VCOMP 0 LM111
+X_R25         0 0 N07074 POT PARAMS: SET={PARAM} VALUE=1K
+R_R23         N07154 0  1MEG  
+R_R24         N07154 N07140  1k  
+V_V14         N07128 0 10
+V_V15         0 N07134 10
+V_V13         N07054 0 10
+R_R22         N07054 N07074  1k  
+X_U5         N07074 N07154 N07128 N07134 N07140 uA741
+Q_Q4         N07656 N07642 N07636 Q2N3906
+R_R27         N07642 0  1k  
+R_R28         N07626 N07642  1k  
+R_R29         N07626 N07636  1k  
+V_V16         N07626 0 0Vdc
+R_R26         N07656 0  1k  
+V_V18         N084101 0  
++PWL 0.8m 2.1 2m 2.5 
+R_R8         VCOMP N08304  1  
+X_S3    N08304 0 VFIJA 0 SCHEMATIC1_S3 
+C_C1         VCOMP VCOMP  100n   
+R_R30         N084101 N08422  1  
+X_S2    VCOMP 0 N08422 VCOMP SCHEMATIC1_S2 
+V_V12         N09317 0 10
+R_R32         N09317 VFIJA  1  
+.PARAM  param=0
+
+.subckt SCHEMATIC1_S3 1 2 3 4  
+S_S3         3 4 1 2 Sbreak
+RS_S3         1 2 1G
+.ends SCHEMATIC1_S3
+
+.subckt SCHEMATIC1_S2 1 2 3 4  
+S_S2         3 4 1 2 Sbreak
+RS_S2         1 2 1G
+.ends SCHEMATIC1_S2

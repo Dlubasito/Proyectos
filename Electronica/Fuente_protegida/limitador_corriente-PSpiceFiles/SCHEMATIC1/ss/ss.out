@@ -1,0 +1,1073 @@
+
+**** 08/01/26 13:15:51 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ss"  [ C:\Users\aleja\Desktop\diseños_orCAD\limitador_corriente-PSpiceFiles\SCHEMATIC1\ss.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "ss.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\aleja\AppData\Roaming\SPB_16.6\cdssetup\OrCAD_PSpice/16.6.0/PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 1000ns 0 
+.STEP LIN PARAM PARAM 0 1 0.1 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source LIMITADOR_CORRIENTE
+V_V1         N00177 0 10
+R_R2         N00177 N00191  1k  
+R_R3         N00339 0  1MEG  
+R_R4         N00339 N00327  1k  
+X_U1         N00191 N00339 N00279 N00285 N00327 uA741
+V_V2         N00279 0 10
+V_V3         0 N00285 10
+X_R5         0 0 N00191 POT PARAMS: SET={PARAM} VALUE=1K
+R_R6         N008771 N008770  1k  
+R_R7         N008770 0  1k  
+V_V4         N008771 0 10
+V_V5         N01322 0 10
+R_R9         N01348 N01334  1k  
+V_V6         0 N01328 10
+X_U2         N01316 N01348 N01322 N01328 N01334 uA741
+R_R8         N01348 0  1MEG  
+R_R10         N015041 N01316  1k  
+R_R11         N01316 0  1k  
+V_V7         N015041 0 10
+X_S1    N01334 0 N01751 N01334 SCHEMATIC1_S1 
+V_V8         N01751 0 10
+.PARAM  param=0
+
+.subckt SCHEMATIC1_S1 1 2 3 4  
+S_S1         3 4 1 2 Sbreak
+RS_S1         1 2 1G
+.ends SCHEMATIC1_S1
+
+**** RESUMING ss.cir ****
+.END
+
+**** 08/01/26 13:15:51 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ss"  [ C:\Users\aleja\Desktop\diseños_orCAD\limitador_corriente-PSpiceFiles\SCHEMATIC1\ss.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.dx         X_U2.dx         
+          IS  800.000000E-18  800.000000E-18 
+          RS    1               1            
+
+
+**** 08/01/26 13:15:51 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ss"  [ C:\Users\aleja\Desktop\diseños_orCAD\limitador_corriente-PSpiceFiles\SCHEMATIC1\ss.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.qx         X_U2.qx         
+               NPN             NPN             
+       LEVEL    1               1            
+          IS  800.000000E-18  800.000000E-18 
+          BF   93.75           93.75         
+          NF    1               1            
+          BR    1               1            
+          NR    1               1            
+         ISS    0               0            
+          RE    0               0            
+          RC    0               0            
+         CJE    0               0            
+         VJE     .75             .75         
+         CJC    0               0            
+         VJC     .75             .75         
+         MJC     .33             .33         
+        XCJC    1               1            
+         CJS    0               0            
+         VJS     .75             .75         
+          KF    0               0            
+          AF    1               1            
+          CN    2.42            2.42         
+           D     .87             .87         
+
+
+**** 08/01/26 13:15:51 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ss"  [ C:\Users\aleja\Desktop\diseños_orCAD\limitador_corriente-PSpiceFiles\SCHEMATIC1\ss.sim ] 
+
+
+ ****     Voltage Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Sbreak          
+         RON    1            
+        ROFF    1.000000E+06 
+         VON    1            
+        VOFF    0            
+
+
+**** 08/01/26 13:15:51 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ss"  [ C:\Users\aleja\Desktop\diseños_orCAD\limitador_corriente-PSpiceFiles\SCHEMATIC1\ss.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM PARAM =    0     
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00177)   10.0000 (N00191) 10.00E-06 (N00279)   10.0000 (N00285)  -10.0000     
+
+(N00327) 109.0E-06 (N00339) 29.25E-06 (N01316)    5.0000 (N01322)   10.0000     
+
+(N01328)  -10.0000 (N01334)    9.8938 (N01348)    9.8838 (N01751)   10.0000     
+
+(X_U1.6)-11.78E-09 (X_U1.7) 113.0E-06 (X_U1.8) 113.0E-06 (X_U1.9)    0.0000     
+
+(X_U2.6)    1.5748 (X_U2.7)    7.8491 (X_U2.8)    7.8491 (X_U2.9)    0.0000     
+
+(N008770)    5.0000                   (N008771)   10.0000                       
+
+(N015041)   10.0000                   (X_U1.10)    -.6077                       
+
+(X_U1.11)    9.9603                   (X_U1.12)    9.9603                       
+
+(X_U1.13)    -.5938                   (X_U1.14)    -.5938                       
+
+(X_U1.53)    9.0000                   (X_U1.54)   -9.0000                       
+
+(X_U1.90) 79.80E-06                   (X_U1.91)   40.0000                       
+
+(X_U1.92)  -40.0000                   (X_U1.99)    0.0000                       
+
+(X_U2.10)    9.2417                   (X_U2.11)    9.9167                       
+
+(X_U2.12)   10.0000                   (X_U2.13)    9.2708                       
+
+(X_U2.14)    9.2417                   (X_U2.53)    9.0000                       
+
+(X_U2.54)   -9.0000                   (X_U2.90)  -40.8940                       
+
+(X_U2.91)   40.0000                   (X_U2.92)  -40.0000                       
+
+(X_U2.99)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -1.000E-02
+    V_V2        -1.116E-03
+    V_V3        -1.116E-03
+    V_V4        -5.000E-03
+    V_V5         6.418E-02
+    V_V6        -1.116E-03
+    V_V7        -5.000E-03
+    V_V8        -1.062E-01
+    X_U1.vb     -1.178E-13
+    X_U1.vc      9.001E-12
+    X_U1.ve      9.001E-12
+    X_U1.vlim    7.980E-08
+    X_U1.vlp    -4.000E-11
+    X_U1.vln    -4.000E-11
+    X_U2.vb      1.575E-05
+    X_U2.vc     -6.529E-02
+    X_U2.ve      1.889E-11
+    X_U2.vlim   -4.089E-02
+    X_U2.vlp    -8.089E-11
+    X_U2.vln     6.531E-02
+
+    TOTAL POWER DISSIPATION  -1.89E+00  WATTS
+
+
+**** 08/01/26 13:15:51 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ss"  [ C:\Users\aleja\Desktop\diseños_orCAD\limitador_corriente-PSpiceFiles\SCHEMATIC1\ss.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM PARAM =     .1   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00177)   10.0000 (N00191)     .9091 (N00279)   10.0000 (N00285)  -10.0000     
+
+(N00327)     .9101 (N00339)     .9091 (N01316)    5.0000 (N01322)   10.0000     
+
+(N01328)  -10.0000 (N01334)    9.8938 (N01348)    9.8838 (N01751)   10.0000     
+
+(X_U1.6)-85.96E-06 (X_U1.7)     .9101 (X_U1.8)     .9101 (X_U1.9)    0.0000     
+
+(X_U2.6)    1.5748 (X_U2.7)    7.8491 (X_U2.8)    7.8491 (X_U2.9)    0.0000     
+
+(N008770)    5.0000                   (N008771)   10.0000                       
+
+(N015041)   10.0000                   (X_U1.10)     .3012                       
+
+(X_U1.11)    9.9602                   (X_U1.12)    9.9601                       
+
+(X_U1.13)     .3152                   (X_U1.14)     .3152                       
+
+(X_U1.53)    9.0000                   (X_U1.54)   -9.0000                       
+
+(X_U1.90) 989.2E-06                   (X_U1.91)   40.0000                       
+
+(X_U1.92)  -40.0000                   (X_U1.99)    0.0000                       
+
+(X_U2.10)    9.2417                   (X_U2.11)    9.9167                       
+
+(X_U2.12)   10.0000                   (X_U2.13)    9.2708                       
+
+(X_U2.14)    9.2417                   (X_U2.53)    9.0000                       
+
+(X_U2.54)   -9.0000                   (X_U2.90)  -40.8940                       
+
+(X_U2.91)   40.0000                   (X_U2.92)  -40.0000                       
+
+(X_U2.99)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -9.091E-03
+    V_V2        -1.116E-03
+    V_V3        -1.116E-03
+    V_V4        -5.000E-03
+    V_V5         6.418E-02
+    V_V6        -1.116E-03
+    V_V7        -5.000E-03
+    V_V8        -1.062E-01
+    X_U1.vb     -8.596E-10
+    X_U1.vc      8.091E-12
+    X_U1.ve      9.911E-12
+    X_U1.vlim    9.892E-07
+    X_U1.vlp    -4.000E-11
+    X_U1.vln    -4.001E-11
+    X_U2.vb      1.575E-05
+    X_U2.vc     -6.529E-02
+    X_U2.ve      1.889E-11
+    X_U2.vlim   -4.089E-02
+    X_U2.vlp    -8.089E-11
+    X_U2.vln     6.531E-02
+
+    TOTAL POWER DISSIPATION  -1.90E+00  WATTS
+
+
+**** 08/01/26 13:15:51 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ss"  [ C:\Users\aleja\Desktop\diseños_orCAD\limitador_corriente-PSpiceFiles\SCHEMATIC1\ss.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM PARAM =     .2   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00177)   10.0000 (N00191)    1.6667 (N00279)   10.0000 (N00285)  -10.0000     
+
+(N00327)    1.6684 (N00339)    1.6666 (N01316)    5.0000 (N01322)   10.0000     
+
+(N01328)  -10.0000 (N01334)    9.8938 (N01348)    9.8838 (N01751)   10.0000     
+
+(X_U1.6)-157.6E-06 (X_U1.7)    1.6685 (X_U1.8)    1.6685 (X_U1.9)    0.0000     
+
+(X_U2.6)    1.5748 (X_U2.7)    7.8491 (X_U2.8)    7.8491 (X_U2.9)    0.0000     
+
+(N008770)    5.0000                   (N008771)   10.0000                       
+
+(N015041)   10.0000                   (X_U1.10)    1.0586                       
+
+(X_U1.11)    9.9600                   (X_U1.12)    9.9600                       
+
+(X_U1.13)    1.0726                   (X_U1.14)    1.0726                       
+
+(X_U1.53)    9.0000                   (X_U1.54)   -9.0000                       
+
+(X_U1.90)     .0017                   (X_U1.91)   40.0000                       
+
+(X_U1.92)  -40.0000                   (X_U1.99)    0.0000                       
+
+(X_U2.10)    9.2417                   (X_U2.11)    9.9167                       
+
+(X_U2.12)   10.0000                   (X_U2.13)    9.2708                       
+
+(X_U2.14)    9.2417                   (X_U2.53)    9.0000                       
+
+(X_U2.54)   -9.0000                   (X_U2.90)  -40.8940                       
+
+(X_U2.91)   40.0000                   (X_U2.92)  -40.0000                       
+
+(X_U2.99)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -8.333E-03
+    V_V2        -1.116E-03
+    V_V3        -1.116E-03
+    V_V4        -5.000E-03
+    V_V5         6.418E-02
+    V_V6        -1.116E-03
+    V_V7        -5.000E-03
+    V_V8        -1.062E-01
+    X_U1.vb     -1.576E-09
+    X_U1.vc      7.332E-12
+    X_U1.ve      1.067E-11
+    X_U1.vlim    1.747E-06
+    X_U1.vlp    -4.000E-11
+    X_U1.vln    -4.001E-11
+    X_U2.vb      1.575E-05
+    X_U2.vc     -6.529E-02
+    X_U2.ve      1.889E-11
+    X_U2.vlim   -4.089E-02
+    X_U2.vlp    -8.089E-11
+    X_U2.vln     6.531E-02
+
+    TOTAL POWER DISSIPATION  -1.91E+00  WATTS
+
+
+**** 08/01/26 13:15:51 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ss"  [ C:\Users\aleja\Desktop\diseños_orCAD\limitador_corriente-PSpiceFiles\SCHEMATIC1\ss.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM PARAM =     .3   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00177)   10.0000 (N00191)    2.3077 (N00279)   10.0000 (N00285)  -10.0000     
+
+(N00327)    2.3100 (N00339)    2.3076 (N01316)    5.0000 (N01322)   10.0000     
+
+(N01328)  -10.0000 (N01334)    9.8938 (N01348)    9.8838 (N01751)   10.0000     
+
+(X_U1.6)-218.2E-06 (X_U1.7)    2.3101 (X_U1.8)    2.3101 (X_U1.9)    0.0000     
+
+(X_U2.6)    1.5748 (X_U2.7)    7.8491 (X_U2.8)    7.8491 (X_U2.9)    0.0000     
+
+(N008770)    5.0000                   (N008771)   10.0000                       
+
+(N015041)   10.0000                   (X_U1.10)    1.6995                       
+
+(X_U1.11)    9.9599                   (X_U1.12)    9.9598                       
+
+(X_U1.13)    1.7135                   (X_U1.14)    1.7136                       
+
+(X_U1.53)    9.0000                   (X_U1.54)   -9.0000                       
+
+(X_U1.90)     .0024                   (X_U1.91)   40.0000                       
+
+(X_U1.92)  -40.0000                   (X_U1.99)    0.0000                       
+
+(X_U2.10)    9.2417                   (X_U2.11)    9.9167                       
+
+(X_U2.12)   10.0000                   (X_U2.13)    9.2708                       
+
+(X_U2.14)    9.2417                   (X_U2.53)    9.0000                       
+
+(X_U2.54)   -9.0000                   (X_U2.90)  -40.8940                       
+
+(X_U2.91)   40.0000                   (X_U2.92)  -40.0000                       
+
+(X_U2.99)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -7.692E-03
+    V_V2        -1.116E-03
+    V_V3        -1.116E-03
+    V_V4        -5.000E-03
+    V_V5         6.418E-02
+    V_V6        -1.116E-03
+    V_V7        -5.000E-03
+    V_V8        -1.062E-01
+    X_U1.vb     -2.182E-09
+    X_U1.vc      6.691E-12
+    X_U1.ve      1.131E-11
+    X_U1.vlim    2.388E-06
+    X_U1.vlp    -4.000E-11
+    X_U1.vln    -4.001E-11
+    X_U2.vb      1.575E-05
+    X_U2.vc     -6.529E-02
+    X_U2.ve      1.889E-11
+    X_U2.vlim   -4.089E-02
+    X_U2.vlp    -8.089E-11
+    X_U2.vln     6.531E-02
+
+    TOTAL POWER DISSIPATION  -1.92E+00  WATTS
+
+
+**** 08/01/26 13:15:51 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ss"  [ C:\Users\aleja\Desktop\diseños_orCAD\limitador_corriente-PSpiceFiles\SCHEMATIC1\ss.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM PARAM =     .4   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00177)   10.0000 (N00191)    2.8571 (N00279)   10.0000 (N00285)  -10.0000     
+
+(N00327)    2.8600 (N00339)    2.8570 (N01316)    5.0000 (N01322)   10.0000     
+
+(N01328)  -10.0000 (N01334)    9.8938 (N01348)    9.8838 (N01751)   10.0000     
+
+(X_U1.6)-270.1E-06 (X_U1.7)    2.8601 (X_U1.8)    2.8601 (X_U1.9)    0.0000     
+
+(X_U2.6)    1.5748 (X_U2.7)    7.8491 (X_U2.8)    7.8491 (X_U2.9)    0.0000     
+
+(N008770)    5.0000                   (N008771)   10.0000                       
+
+(N015041)   10.0000                   (X_U1.10)    2.2488                       
+
+(X_U1.11)    9.9598                   (X_U1.12)    9.9597                       
+
+(X_U1.13)    2.2629                   (X_U1.14)    2.2629                       
+
+(X_U1.53)    9.0000                   (X_U1.54)   -9.0000                       
+
+(X_U1.90)     .0029                   (X_U1.91)   40.0000                       
+
+(X_U1.92)  -40.0000                   (X_U1.99)    0.0000                       
+
+(X_U2.10)    9.2417                   (X_U2.11)    9.9167                       
+
+(X_U2.12)   10.0000                   (X_U2.13)    9.2708                       
+
+(X_U2.14)    9.2417                   (X_U2.53)    9.0000                       
+
+(X_U2.54)   -9.0000                   (X_U2.90)  -40.8940                       
+
+(X_U2.91)   40.0000                   (X_U2.92)  -40.0000                       
+
+(X_U2.99)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -7.143E-03
+    V_V2        -1.116E-03
+    V_V3        -1.116E-03
+    V_V4        -5.000E-03
+    V_V5         6.418E-02
+    V_V6        -1.116E-03
+    V_V7        -5.000E-03
+    V_V8        -1.062E-01
+    X_U1.vb     -2.701E-09
+    X_U1.vc      6.141E-12
+    X_U1.ve      1.186E-11
+    X_U1.vlim    2.938E-06
+    X_U1.vlp    -4.000E-11
+    X_U1.vln    -4.001E-11
+    X_U2.vb      1.575E-05
+    X_U2.vc     -6.529E-02
+    X_U2.ve      1.889E-11
+    X_U2.vlim   -4.089E-02
+    X_U2.vlp    -8.089E-11
+    X_U2.vln     6.531E-02
+
+    TOTAL POWER DISSIPATION  -1.92E+00  WATTS
+
+
+**** 08/01/26 13:15:51 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ss"  [ C:\Users\aleja\Desktop\diseños_orCAD\limitador_corriente-PSpiceFiles\SCHEMATIC1\ss.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM PARAM =     .5   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00177)   10.0000 (N00191)    3.3333 (N00279)   10.0000 (N00285)  -10.0000     
+
+(N00327)    3.3366 (N00339)    3.3332 (N01316)    5.0000 (N01322)   10.0000     
+
+(N01328)  -10.0000 (N01334)    9.8938 (N01348)    9.8838 (N01751)   10.0000     
+
+(X_U1.6)-315.2E-06 (X_U1.7)    3.3368 (X_U1.8)    3.3368 (X_U1.9)    0.0000     
+
+(X_U2.6)    1.5748 (X_U2.7)    7.8491 (X_U2.8)    7.8491 (X_U2.9)    0.0000     
+
+(N008770)    5.0000                   (N008771)   10.0000                       
+
+(N015041)   10.0000                   (X_U1.10)    2.7249                       
+
+(X_U1.11)    9.9597                   (X_U1.12)    9.9596                       
+
+(X_U1.13)    2.7390                   (X_U1.14)    2.7391                       
+
+(X_U1.53)    9.0000                   (X_U1.54)   -9.0000                       
+
+(X_U1.90)     .0034                   (X_U1.91)   40.0000                       
+
+(X_U1.92)  -40.0000                   (X_U1.99)    0.0000                       
+
+(X_U2.10)    9.2417                   (X_U2.11)    9.9167                       
+
+(X_U2.12)   10.0000                   (X_U2.13)    9.2708                       
+
+(X_U2.14)    9.2417                   (X_U2.53)    9.0000                       
+
+(X_U2.54)   -9.0000                   (X_U2.90)  -40.8940                       
+
+(X_U2.91)   40.0000                   (X_U2.92)  -40.0000                       
+
+(X_U2.99)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -6.667E-03
+    V_V2        -1.117E-03
+    V_V3        -1.116E-03
+    V_V4        -5.000E-03
+    V_V5         6.418E-02
+    V_V6        -1.116E-03
+    V_V7        -5.000E-03
+    V_V8        -1.062E-01
+    X_U1.vb     -3.152E-09
+    X_U1.vc      5.664E-12
+    X_U1.ve      1.234E-11
+    X_U1.vlim    3.414E-06
+    X_U1.vlp    -4.000E-11
+    X_U1.vln    -4.001E-11
+    X_U2.vb      1.575E-05
+    X_U2.vc     -6.529E-02
+    X_U2.ve      1.889E-11
+    X_U2.vlim   -4.089E-02
+    X_U2.vlp    -8.089E-11
+    X_U2.vln     6.531E-02
+
+    TOTAL POWER DISSIPATION  -1.93E+00  WATTS
+
+
+**** 08/01/26 13:15:51 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ss"  [ C:\Users\aleja\Desktop\diseños_orCAD\limitador_corriente-PSpiceFiles\SCHEMATIC1\ss.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM PARAM =     .6   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00177)   10.0000 (N00191)    3.7500 (N00279)   10.0000 (N00285)  -10.0000     
+
+(N00327)    3.7537 (N00339)    3.7499 (N01316)    5.0000 (N01322)   10.0000     
+
+(N01328)  -10.0000 (N01334)    9.8938 (N01348)    9.8838 (N01751)   10.0000     
+
+(X_U1.6)-354.6E-06 (X_U1.7)    3.7539 (X_U1.8)    3.7539 (X_U1.9)    0.0000     
+
+(X_U2.6)    1.5748 (X_U2.7)    7.8491 (X_U2.8)    7.8491 (X_U2.9)    0.0000     
+
+(N008770)    5.0000                   (N008771)   10.0000                       
+
+(N015041)   10.0000                   (X_U1.10)    3.1415                       
+
+(X_U1.11)    9.9596                   (X_U1.12)    9.9595                       
+
+(X_U1.13)    3.1556                   (X_U1.14)    3.1557                       
+
+(X_U1.53)    9.0000                   (X_U1.54)   -9.0000                       
+
+(X_U1.90)     .0038                   (X_U1.91)   40.0000                       
+
+(X_U1.92)  -40.0000                   (X_U1.99)    0.0000                       
+
+(X_U2.10)    9.2417                   (X_U2.11)    9.9167                       
+
+(X_U2.12)   10.0000                   (X_U2.13)    9.2708                       
+
+(X_U2.14)    9.2417                   (X_U2.53)    9.0000                       
+
+(X_U2.54)   -9.0000                   (X_U2.90)  -40.8940                       
+
+(X_U2.91)   40.0000                   (X_U2.92)  -40.0000                       
+
+(X_U2.99)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -6.250E-03
+    V_V2        -1.117E-03
+    V_V3        -1.116E-03
+    V_V4        -5.000E-03
+    V_V5         6.418E-02
+    V_V6        -1.116E-03
+    V_V7        -5.000E-03
+    V_V8        -1.062E-01
+    X_U1.vb     -3.546E-09
+    X_U1.vc      5.247E-12
+    X_U1.ve      1.275E-11
+    X_U1.vlim    3.831E-06
+    X_U1.vlp    -4.000E-11
+    X_U1.vln    -4.001E-11
+    X_U2.vb      1.575E-05
+    X_U2.vc     -6.529E-02
+    X_U2.ve      1.889E-11
+    X_U2.vlim   -4.089E-02
+    X_U2.vlp    -8.089E-11
+    X_U2.vln     6.531E-02
+
+    TOTAL POWER DISSIPATION  -1.93E+00  WATTS
+
+
+**** 08/01/26 13:15:51 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ss"  [ C:\Users\aleja\Desktop\diseños_orCAD\limitador_corriente-PSpiceFiles\SCHEMATIC1\ss.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM PARAM =     .7   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00177)   10.0000 (N00191)    4.1176 (N00279)   10.0000 (N00285)  -10.0000     
+
+(N00327)    4.1217 (N00339)    4.1175 (N01316)    5.0000 (N01322)   10.0000     
+
+(N01328)  -10.0000 (N01334)    9.8938 (N01348)    9.8838 (N01751)   10.0000     
+
+(X_U1.6)-389.3E-06 (X_U1.7)    4.1219 (X_U1.8)    4.1219 (X_U1.9)    0.0000     
+
+(X_U2.6)    1.5748 (X_U2.7)    7.8491 (X_U2.8)    7.8491 (X_U2.9)    0.0000     
+
+(N008770)    5.0000                   (N008771)   10.0000                       
+
+(N015041)   10.0000                   (X_U1.10)    3.5091                       
+
+(X_U1.11)    9.9596                   (X_U1.12)    9.9594                       
+
+(X_U1.13)    3.5232                   (X_U1.14)    3.5232                       
+
+(X_U1.53)    9.0000                   (X_U1.54)   -9.0000                       
+
+(X_U1.90)     .0042                   (X_U1.91)   40.0000                       
+
+(X_U1.92)  -40.0000                   (X_U1.99)    0.0000                       
+
+(X_U2.10)    9.2417                   (X_U2.11)    9.9167                       
+
+(X_U2.12)   10.0000                   (X_U2.13)    9.2708                       
+
+(X_U2.14)    9.2417                   (X_U2.53)    9.0000                       
+
+(X_U2.54)   -9.0000                   (X_U2.90)  -40.8940                       
+
+(X_U2.91)   40.0000                   (X_U2.92)  -40.0000                       
+
+(X_U2.99)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -5.882E-03
+    V_V2        -1.117E-03
+    V_V3        -1.116E-03
+    V_V4        -5.000E-03
+    V_V5         6.418E-02
+    V_V6        -1.116E-03
+    V_V7        -5.000E-03
+    V_V8        -1.062E-01
+    X_U1.vb     -3.893E-09
+    X_U1.vc      4.879E-12
+    X_U1.ve      1.312E-11
+    X_U1.vlim    4.199E-06
+    X_U1.vlp    -4.000E-11
+    X_U1.vln    -4.001E-11
+    X_U2.vb      1.575E-05
+    X_U2.vc     -6.529E-02
+    X_U2.ve      1.889E-11
+    X_U2.vlim   -4.089E-02
+    X_U2.vlp    -8.089E-11
+    X_U2.vln     6.531E-02
+
+    TOTAL POWER DISSIPATION  -1.93E+00  WATTS
+
+
+**** 08/01/26 13:15:51 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ss"  [ C:\Users\aleja\Desktop\diseños_orCAD\limitador_corriente-PSpiceFiles\SCHEMATIC1\ss.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM PARAM =     .8   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00177)   10.0000 (N00191)    4.4444 (N00279)   10.0000 (N00285)  -10.0000     
+
+(N00327)    4.4488 (N00339)    4.4443 (N01316)    5.0000 (N01322)   10.0000     
+
+(N01328)  -10.0000 (N01334)    9.8938 (N01348)    9.8838 (N01751)   10.0000     
+
+(X_U1.6)-420.2E-06 (X_U1.7)    4.4490 (X_U1.8)    4.4490 (X_U1.9)    0.0000     
+
+(X_U2.6)    1.5748 (X_U2.7)    7.8491 (X_U2.8)    7.8491 (X_U2.9)    0.0000     
+
+(N008770)    5.0000                   (N008771)   10.0000                       
+
+(N015041)   10.0000                   (X_U1.10)    3.8358                       
+
+(X_U1.11)    9.9595                   (X_U1.12)    9.9594                       
+
+(X_U1.13)    3.8499                   (X_U1.14)    3.8500                       
+
+(X_U1.53)    9.0000                   (X_U1.54)   -9.0000                       
+
+(X_U1.90)     .0045                   (X_U1.91)   40.0000                       
+
+(X_U1.92)  -40.0000                   (X_U1.99)    0.0000                       
+
+(X_U2.10)    9.2417                   (X_U2.11)    9.9167                       
+
+(X_U2.12)   10.0000                   (X_U2.13)    9.2708                       
+
+(X_U2.14)    9.2417                   (X_U2.53)    9.0000                       
+
+(X_U2.54)   -9.0000                   (X_U2.90)  -40.8940                       
+
+(X_U2.91)   40.0000                   (X_U2.92)  -40.0000                       
+
+(X_U2.99)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -5.556E-03
+    V_V2        -1.117E-03
+    V_V3        -1.116E-03
+    V_V4        -5.000E-03
+    V_V5         6.418E-02
+    V_V6        -1.116E-03
+    V_V7        -5.000E-03
+    V_V8        -1.062E-01
+    X_U1.vb     -4.202E-09
+    X_U1.vc      4.552E-12
+    X_U1.ve      1.345E-11
+    X_U1.vlim    4.526E-06
+    X_U1.vlp    -4.000E-11
+    X_U1.vln    -4.001E-11
+    X_U2.vb      1.575E-05
+    X_U2.vc     -6.529E-02
+    X_U2.ve      1.889E-11
+    X_U2.vlim   -4.089E-02
+    X_U2.vlp    -8.089E-11
+    X_U2.vln     6.531E-02
+
+    TOTAL POWER DISSIPATION  -1.94E+00  WATTS
+
+
+**** 08/01/26 13:15:51 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ss"  [ C:\Users\aleja\Desktop\diseños_orCAD\limitador_corriente-PSpiceFiles\SCHEMATIC1\ss.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM PARAM =     .9   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00177)   10.0000 (N00191)    4.7368 (N00279)   10.0000 (N00285)  -10.0000     
+
+(N00327)    4.7415 (N00339)    4.7367 (N01316)    5.0000 (N01322)   10.0000     
+
+(N01328)  -10.0000 (N01334)    9.8938 (N01348)    9.8838 (N01751)   10.0000     
+
+(X_U1.6)-447.9E-06 (X_U1.7)    4.7417 (X_U1.8)    4.7417 (X_U1.9)    0.0000     
+
+(X_U2.6)    1.5748 (X_U2.7)    7.8491 (X_U2.8)    7.8491 (X_U2.9)    0.0000     
+
+(N008770)    5.0000                   (N008771)   10.0000                       
+
+(N015041)   10.0000                   (X_U1.10)    4.1281                       
+
+(X_U1.11)    9.9595                   (X_U1.12)    9.9593                       
+
+(X_U1.13)    4.1423                   (X_U1.14)    4.1424                       
+
+(X_U1.53)    9.0000                   (X_U1.54)   -9.0000                       
+
+(X_U1.90)     .0048                   (X_U1.91)   40.0000                       
+
+(X_U1.92)  -40.0000                   (X_U1.99)    0.0000                       
+
+(X_U2.10)    9.2417                   (X_U2.11)    9.9167                       
+
+(X_U2.12)   10.0000                   (X_U2.13)    9.2708                       
+
+(X_U2.14)    9.2417                   (X_U2.53)    9.0000                       
+
+(X_U2.54)   -9.0000                   (X_U2.90)  -40.8940                       
+
+(X_U2.91)   40.0000                   (X_U2.92)  -40.0000                       
+
+(X_U2.99)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -5.263E-03
+    V_V2        -1.117E-03
+    V_V3        -1.116E-03
+    V_V4        -5.000E-03
+    V_V5         6.418E-02
+    V_V6        -1.116E-03
+    V_V7        -5.000E-03
+    V_V8        -1.062E-01
+    X_U1.vb     -4.479E-09
+    X_U1.vc      4.259E-12
+    X_U1.ve      1.374E-11
+    X_U1.vlim    4.818E-06
+    X_U1.vlp    -4.000E-11
+    X_U1.vln    -4.001E-11
+    X_U2.vb      1.575E-05
+    X_U2.vc     -6.529E-02
+    X_U2.ve      1.889E-11
+    X_U2.vlim   -4.089E-02
+    X_U2.vlp    -8.089E-11
+    X_U2.vln     6.531E-02
+
+    TOTAL POWER DISSIPATION  -1.94E+00  WATTS
+
+
+**** 08/01/26 13:15:51 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ss"  [ C:\Users\aleja\Desktop\diseños_orCAD\limitador_corriente-PSpiceFiles\SCHEMATIC1\ss.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM PARAM =    1     
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00177)   10.0000 (N00191)    5.0000 (N00279)   10.0000 (N00285)  -10.0000     
+
+(N00327)    5.0049 (N00339)    4.9998 (N01316)    5.0000 (N01322)   10.0000     
+
+(N01328)  -10.0000 (N01334)    9.8938 (N01348)    9.8838 (N01751)   10.0000     
+
+(X_U1.6)-472.7E-06 (X_U1.7)    5.0051 (X_U1.8)    5.0051 (X_U1.9)    0.0000     
+
+(X_U2.6)    1.5748 (X_U2.7)    7.8491 (X_U2.8)    7.8491 (X_U2.9)    0.0000     
+
+(N008770)    5.0000                   (N008771)   10.0000                       
+
+(N015041)   10.0000                   (X_U1.10)    4.3912                       
+
+(X_U1.11)    9.9594                   (X_U1.12)    9.9593                       
+
+(X_U1.13)    4.4054                   (X_U1.14)    4.4055                       
+
+(X_U1.53)    9.0000                   (X_U1.54)   -9.0000                       
+
+(X_U1.90)     .0051                   (X_U1.91)   40.0000                       
+
+(X_U1.92)  -40.0000                   (X_U1.99)    0.0000                       
+
+(X_U2.10)    9.2417                   (X_U2.11)    9.9167                       
+
+(X_U2.12)   10.0000                   (X_U2.13)    9.2708                       
+
+(X_U2.14)    9.2417                   (X_U2.53)    9.0000                       
+
+(X_U2.54)   -9.0000                   (X_U2.90)  -40.8940                       
+
+(X_U2.91)   40.0000                   (X_U2.92)  -40.0000                       
+
+(X_U2.99)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -5.000E-03
+    V_V2        -1.117E-03
+    V_V3        -1.116E-03
+    V_V4        -5.000E-03
+    V_V5         6.418E-02
+    V_V6        -1.116E-03
+    V_V7        -5.000E-03
+    V_V8        -1.062E-01
+    X_U1.vb     -4.727E-09
+    X_U1.vc      3.996E-12
+    X_U1.ve      1.401E-11
+    X_U1.vlim    5.081E-06
+    X_U1.vlp    -4.000E-11
+    X_U1.vln    -4.001E-11
+    X_U2.vb      1.575E-05
+    X_U2.vc     -6.529E-02
+    X_U2.ve      1.889E-11
+    X_U2.vlim   -4.089E-02
+    X_U2.vlp    -8.089E-11
+    X_U2.vln     6.531E-02
+
+    TOTAL POWER DISSIPATION  -1.94E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 08/01/26 13:15:51 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ss"  [ C:\Users\aleja\Desktop\diseños_orCAD\limitador_corriente-PSpiceFiles\SCHEMATIC1\ss.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+ ****     CURRENT STEP                     PARAM PARAM =    1     
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .27
+
