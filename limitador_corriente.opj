@@ -1,0 +1,77 @@
+(ExpressProject "limitador_corriente"
+  (ProjectVersion "19981106")
+  (ProjectType "Analog or A/D Mixed Mode")
+  (Folder "Design Resources"
+    (Folder "Library")
+    (NoModify)
+    (File ".\limitador_corriente.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (PSPICE_Regenerate_Netlist_Flag "FALSE"))
+  (Folder "Outputs"
+    (File ".\limitador_corriente-pspicefiles\schematic1\schematic1.net"
+      (Type "Report")))
+  (Folder "PSpice Resources"
+    (Folder "Simulation Profiles"
+      (ActiveProfile ".\limitador_corriente-pspicefiles\schematic1\sss.sim")
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\limitador_corriente-pspicefiles\schematic1\sss.sim"
+        (DisplayName "SCHEMATIC1-sss")
+        (Type "PSpice Profile")))
+    (Folder "Model Libraries"
+      (Sort User)
+      (File ".\limitador_corriente-pspicefiles\limitador_corriente.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName
+           ".\limitador_corriente-pspicefiles\limitador_corriente.lib")))
+    (Folder "Stimulus Files"
+      (Sort User))
+    (Folder "Include Files"
+      (Sort User)))
+  (DefaultLibraryBrowseDirectory "library\PSpice")
+  (MPSSessionName "aleja")
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources"
+         "C:\Users\aleja\Desktop\diseños_orCAD\limitador_corriente.dsn")
+      (Path "Design Resources"
+         "C:\Users\aleja\Desktop\diseños_orCAD\limitador_corriente.dsn"
+         "SCHEMATIC1")
+      (Path "Outputs"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -31 0 200 0 209"))
+      (Tab 0)))
+  (PartMRUSelector
+    (Sbreak
+      (FullPartName "Sbreak.Normal")
+      (LibraryName
+         "C:\ORCAD\ORCAD_16.6_LITE\TOOLS\CAPTURE\LIBRARY\PSPICE\BREAKOUT.OLB")
+      (DeviceIndex "0"))
+    (r
+      (FullPartName "r.Normal")
+      (LibraryName
+         "C:\ORCAD\ORCAD_16.6_LITE\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG_P.OLB")
+      (DeviceIndex "0"))
+    (0
+      (LibraryName "C:\ORCAD\ORCAD_16.6_LITE\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (LM111
+      (FullPartName "LM111.Normal")
+      (LibraryName
+         "C:\ORCAD\ORCAD_16.6_LITE\TOOLS\CAPTURE\LIBRARY\PSPICE\EVAL.OLB")
+      (DeviceIndex "0"))
+    (VDC
+      (FullPartName "VDC.Normal")
+      (LibraryName
+         "C:\ORCAD\ORCAD_16.6_LITE\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (2N2222
+      (FullPartName "2N2222.Normal")
+      (LibraryName
+         "C:\ORCAD\ORCAD_16.6_LITE\TOOLS\CAPTURE\LIBRARY\PSPICE\EVALAA.OLB")
+      (DeviceIndex "0"))))
