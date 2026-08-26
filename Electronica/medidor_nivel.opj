@@ -31,9 +31,9 @@
     (FileView
       (Path "Design Resources")
       (Path "Design Resources"
-         "C:\Users\aleja\Desktop\diseños\medidor_nivel.dsn")
+         "C:\Users\aleja\Desktop\diseÃ±os\medidor_nivel.dsn")
       (Path "Design Resources"
-         "C:\Users\aleja\Desktop\diseños\medidor_nivel.dsn" "SCHEMATIC1")
+         "C:\Users\aleja\Desktop\diseÃ±os\medidor_nivel.dsn" "SCHEMATIC1")
       (Path "Outputs"))
     (HierarchyView)
     (Doc
@@ -48,7 +48,7 @@
         (Scroll "-264 0")
         (Zoom "45")
         (Occurrence "/"))
-      (Path "C:\USERS\ALEJA\DESKTOP\DISEÑOS\MEDIDOR_NIVEL.DSN")
+      (Path "C:\USERS\ALEJA\DESKTOP\DISEÃ‘OS\MEDIDOR_NIVEL.DSN")
       (Schematic "SCHEMATIC1")
       (Page "PAGE1")))
   (PartMRUSelector
